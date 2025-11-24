@@ -1,46 +1,40 @@
-" lzrscu's vim config
+" ~/.vimrc 
+" vim config file (no plugins)
+" Maintainer: Sebastian Lăzărescu <sebastian@lzrscu.ro> 
 
-call plug#begin()
-Plug 'jiangmiao/auto-pairs'
-call plug#end()
-
-syntax on  
-colorscheme industry
-filetype plugin indent on
-set enc=utf-8
 set nocompatible
-set number
-set relativenumber
+set mouse=
+syntax enable  
+filetype plugin indent on
+colorscheme 256_noir 
+
+set path+=**
+set enc=utf-8
+set number relativenumber
+set incsearch hlsearch ignorecase smartcase
+set cursorline
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
-set nocompatible
 set showmatch
 set showcmd
-set showmatch
 set wildmenu
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
 set autoindent
 set smartindent
-set autochdir
 set termguicolors
+
+" keymaps
+let mapleader=" "
+let maplocalleader="\\"
+
+inoremap jk <esc>
+nnoremap <silent> <esc> <cmd>nohlsearch<cr>
 
 " autocommands
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-
-" basic keymaps
-let mapleader=" "
-let maplocalleader="\\"
-nnoremap <leader>ev <Cmd>vsplit $MYVIMRC<CR>
-nnoremap <leader>sv <Cmd>source $MYVIMRC<CR>
-nnoremap <silent> <Esc> <Cmd>nohlsearch<CR>
-inoremap jj <Esc>
+autocmd FileType c,cpp nnoremap <leader>cc I/* <esc>A */<esc>
 
 " a few abbreviations
 iabbrev @@ sebastian@lzrscu.ro
-iabbrev ccopy Copyright 2025 Sebastian Lazarescu, all rights reserved.
-iabbrev ssig -----<CR>Sebastian Lăzărescu<CR>sebastian@lzrscu.ro
+iabbrev mmaintainer Maintainer: Sebastian Lăzărescu <sebastian@lzrscu.ro>
