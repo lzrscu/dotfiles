@@ -1,10 +1,13 @@
 " .vimrc
+"
+" Name: Vim configuration file
 " Maintainer: Sebastian Lăzărescu <sebastian@lzrscu.ro> 
+" License: MIT 
 
 " general settings
 set nocompatible
 filetype plugin indent on
-colorscheme 256_noir 
+colorscheme monochrome
 set path+=**
 set enc=utf-8
 set tw=80
@@ -44,3 +47,4 @@ autocmd FileType cpp iabbrev mmain #include <iostream><cr><cr>int<cr>
 " a few abbreviations
 iabbrev @@ sebastian@lzrscu.ro
 iabbrev mmaintainer Maintainer: Sebastian Lăzărescu <sebastian@lzrscu.ro>
+iabbrev mitl License: MIT
